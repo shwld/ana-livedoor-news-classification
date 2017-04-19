@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  livedoor-news:
+    build: .
+    command: jupyter notebook -y --no-browser --ip 0.0.0.0
+    volumes:
+      - ./livedoor-news:/usr/src
+      - ./input:/usr/input
+    ports:
+      - "8888:8888"
